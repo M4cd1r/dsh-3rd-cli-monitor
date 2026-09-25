@@ -7,7 +7,7 @@
 
 - insert:
     - id: third-cli-monitor
-      name: dsh-3rd-cli-monitor
+      name: '@m4cd1r/dsh-3rd-cli-monitor'
       config:
         activeCli: zcode
         pollMs: 15000

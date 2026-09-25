@@ -39,7 +39,7 @@ test('cordis.patch.yml inserts the plugin row with safe defaults', () => {
   const patch = read('cordis.patch.yml');
   assert.match(patch, /-\s+insert:/);
   assert.match(patch, /id:\s*third-cli-monitor/);
-  assert.match(patch, /name:\s*dsh-3rd-cli-monitor\s*$/m);
+  assert.match(patch, /name:\s*['"]@m4cd1r\/dsh-3rd-cli-monitor['"]\s*$/m);
   assert.match(patch, /activeCli:\s*zcode/);
   // The patch must not carry secrets or absolute paths.
   assert.ok(!/[A-Za-z]:\\/.test(patch), 'no Windows absolute paths in the patch');
