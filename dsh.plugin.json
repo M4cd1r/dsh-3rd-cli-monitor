@@ -1,0 +1,14 @@
+{
+  "id": "third-cli-monitor",
+  "name": "dsh-3rd-cli-monitor",
+  "version": "0.1.0",
+  "description": "Read-only, provider-neutral monitor for third-party coding CLI runs (ZCode first), sourced from their log/report artifacts.",
+  "main": "./src/host/plugin.mjs",
+  "engines": {
+    "dsh": ">=0.1.7-rc.1",
+    "node": ">=22.19.0"
+  },
+  "contributes": {
+    "skills": ["SKILL.md"]
+  }
+}

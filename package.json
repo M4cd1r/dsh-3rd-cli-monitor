@@ -1,0 +1,66 @@
+{
+  "name": "@m4cd1r/dsh-3rd-cli-monitor",
+  "version": "0.1.0",
+  "description": "Provider-neutral, read-only DSH plugin and CLI that monitor third-party coding CLI runs (ZCode first) from their log/report artifacts. Never starts, cancels, or restarts a run.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": { "node": ">=22.19.0" },
+  "main": "./src/host/plugin.mjs",
+  "exports": {
+    ".": "./src/host/plugin.mjs",
+    "./cli": "./bin/dsh-3rd-cli-monitor.mjs",
+    "./config": "./src/config.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-3rd-cli-monitor": "bin/dsh-3rd-cli-monitor.mjs"
+  },
+  "files": [
+    "bin/",
+    "docs/",
+    "scripts/",
+    "src/",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "LICENSE",
+    "README.md",
+    "SKILL.md"
+  ],
+  "scripts": {
+    "check": "node scripts/check-syntax.mjs",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "verify": "npm run check && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M4cd1r/dsh-3rd-cli-monitor.git"
+  },
+  "homepage": "https://github.com/M4cd1r/dsh-3rd-cli-monitor#readme",
+  "bugs": {
+    "url": "https://github.com/M4cd1r/dsh-3rd-cli-monitor/issues"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "zcode",
+    "monitor",
+    "read-only",
+    "coding-cli",
+    "observability"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "0.1.7-rc.1",
+    "@deepseek-ai/dsh-typert-registry": "0.1.7-rc.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-typert-protocol": { "optional": true },
+    "@deepseek-ai/dsh-typert-registry": { "optional": true }
+  },
+  "dsh": {
+    "engines": { "dsh": ">=0.1.7-rc.1" },
+    "bundle": { "patch": "./cordis.patch.yml" }
+  }
+}

@@ -1,0 +1,15 @@
+# dsh-3rd-cli-monitor bundle patch
+#
+# The plugin is read-only: it discovers third-party CLI run artifacts and
+# persists normalized monitor state. It never starts, stops, or restarts a CLI.
+# Override paths through the documented environment variables or a later
+# profile patch layer; do not put credentials in this file.
+
+- insert:
+    - id: third-cli-monitor
+      name: dsh-3rd-cli-monitor
+      config:
+        activeCli: zcode
+        pollMs: 15000
+        heartbeatMs: 60000
+        lockStaleMs: 30000
